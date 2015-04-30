@@ -5,8 +5,6 @@ The Third and Grove Drupal skeleton is the starter repository we use to start al
 
 For more information see our [introductory blog post](http://www.thirdandgrove.com/introducing-the-tag-drupal-starter-skeleton).
 
-Made in Cambridge.
-
 Installation
 -
 
@@ -47,3 +45,5 @@ This Drupal starter contains Apache solr 3.5, but it has not been configured for
 Issues? Features?
 -
 We welcome fixes and new features. Just fork the repo and submit a pull request!
+
+_Made in Cambridge, built with beer._
