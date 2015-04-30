@@ -1,6 +1,10 @@
 README
 =
 
+The Third and Grove Drupal skeleton is the starter repository we use to start all new Drupal projects. It contains some repo struts we find useful, a collection of import and release helpers we have written over the years, and the basic drush/release framework we use.
+
+Made in Cambridge.
+
 Installation
 -
 
