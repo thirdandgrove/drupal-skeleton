@@ -1,0 +1,50 @@
+# Ignore paths that contain user-generated content.
+docroot/files
+docroot/sites/*/files
+docroot/sites/*/private
+docroot/files-private
+docroot/sites/default/files-private
+docroot/sites/default/**/files
+docroot/sites/default/**/private
+
+# Secret settings
+docroot/sites/*/local.settings.php
+
+# No examples in the repo.
+docroot/sites/all/modules/contrib/examples
+
+# Ignore our .vagrant runtime information.
+.vagrant
+
+# If you use sass, we ignore the cache that should never end up in version
+# control.
+docroot/sites/all/themes/custom/*/.sass-cache/*
+
+# Vim files
+*.sw[op]
+
+# Vagrant
+.vagrant
+
+# archives
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.log
+*.sql
+ehthumbs.db
+Icon
+Thumbs.db
+._*
+*.DS_Store
+*.un~
+.sass-cache
+.sass-cache/*
+*.css.map

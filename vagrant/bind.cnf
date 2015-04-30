@@ -1,0 +1,4 @@
+[mysqld]
+bind-address = 0.0.0.0
+auto_increment_increment = 5
+max_allowed_packet = 128M

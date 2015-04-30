@@ -1,0 +1,3 @@
+name = Projet Global Refinements
+description = "Make various site-wide global refinements to example.com."
+core = 7.x

@@ -1,0 +1,30 @@
+---
+entities:
+  - title: Free moon rocks
+    entity: node
+    bundle: product
+    user: spaceships
+    values:
+      status: 1
+      body:
+        value: |
+          From now until March 1, free moon rocks!
+  - title: Front Page Slider
+    entity: fieldable_panels_pane
+    bundle: ftt_slider_pane
+    values:
+      field_ftt_slide_1:
+        type: entity
+        entity: field_collection_item
+        bundle: field_ftt_slide
+        values:
+          field_ftt_slide_image:
+            type: file
+            value: home-slide-1.png
+          field_ftt_slide_header:
+            type: text
+            value: Dancing Babies
+          field_ftt_slide_sub_header:
+            type: text
+            value: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+

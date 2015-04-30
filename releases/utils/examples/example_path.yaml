@@ -1,0 +1,12 @@
+---
+paths:
+  - original: user/register
+    new: join
+  - original: terms-and-conditions
+    new: terms-conditions
+  - original: frequently-asked-questions
+    new: faqs
+  - original: how-order-stuff
+    new: stuff
+
+

@@ -1,0 +1,37 @@
+# The terms for the CARE dropdowns.
+---
+vocabularies:
+  care_support_selector:
+    Spaceships:
+      2015:
+        Purchasing Spaceships:
+          field_segment:
+            - value: thing
+          field_inin_sfdc_category:
+            - value: whatup
+          field_free_or_paid:
+            - value: Free
+        Replacement Download or CD
+        Refund
+        Online Banking and Bill Payment:
+          "I'm getting an error message"
+          "I have a question but I'm not getting an error message"
+        Installing, Registering, and Upgrading:
+          field_resources:
+            - title: What is the space?
+              url: http://www.space.com
+            - title: How do I register for space?
+              url: http://www.space.com/reigster
+            - title: What if I don't understand space?
+              url: http://www.space.com/you-have-issues
+        All Other Questions
+      2007:
+        Purchasing Moons
+        Replacement Download or Moonbase
+        Refund on Moonbases
+        Boats and Bill Payment:
+          I'm getting an error message
+          I have a question but I'm not getting an error message
+        Installing, Registering, and Upgrading
+        All Other Questions
+

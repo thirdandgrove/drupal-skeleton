@@ -1,0 +1,50 @@
+---
+menus:
+  - name: main-menu
+    items:
+      - link_path: <front>
+        link_title: This cool section
+        expanded: 1
+        children:
+          - link_path: <front>
+            link_title: About Our Program
+            expanded: 1
+          - link_path: <front>
+            link_title: Become a Member
+            expanded: 1
+          - link_path: <front>
+            link_title: Manage My Account
+            expanded: 1
+          - link_path: <front>
+            link_title: Blog
+            expanded: 1
+      - link_path: <front>
+        link_title: Stuff!
+        expanded: 1
+        children:
+          - link_path: <front>
+            link_title: What We Offer
+            expanded: 1
+          - link_path: <front>
+            link_title: Stuff
+            expanded: 1
+          - link_path: <front>
+            link_title: More Stuff
+            expanded: 1
+          - link_path: <front>
+            link_title: FAQs
+            expanded: 1
+  - name: menu-footer
+    items:
+      - link_path: <front>
+        link_title: About
+      - link_path: <front>
+        link_title: Terms & Conditions
+      - link_path: <front>
+        link_title: Privacy Policy
+      - link_path: <front>
+        link_title: Request a Catalog
+      - link_path: <front>
+        link_title: Find a Store
+      - link_path: <front>
+        link_title: Contact Us

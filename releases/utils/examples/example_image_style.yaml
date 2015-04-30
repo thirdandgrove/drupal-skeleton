@@ -1,0 +1,9 @@
+---
+styles:
+  - label: Slider Full Width (960x500)
+    name: slider_full_width
+    effects:
+      - name: image_scale_and_crop
+        data:
+          width: 960
+          height: 500
