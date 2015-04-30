@@ -46,4 +46,6 @@ Issues? Features?
 -
 We welcome fixes and new features. Just fork the repo and submit a pull request!
 
+![A dancing skeleton in a sombrero](dancing-skeleton-in-a-sombrero.gif)
+
 _Made in Cambridge, built with beer._
