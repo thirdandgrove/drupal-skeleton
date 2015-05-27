@@ -11,7 +11,7 @@
  */
 ?>
 
-<section class="main-header">
+<header class="main-header">
   <div class="main-header-inner">
 
     <?php if ($logo): ?>
@@ -43,7 +43,7 @@
     <?php print render($page['header']); ?>
 
   </div>
-</section> <!-- /.main-header -->
+</header> <!-- /.main-header -->
 
 <?php if ($main_menu || $secondary_menu): ?>
   <nav class="main-navigation">
@@ -103,19 +103,19 @@
   </main><!-- /.main-content -->
 
   <?php if ($page['sidebar_first']): ?>
-    <aside class="sidebar sidebar-first">
+    <section class="sidebar sidebar-first">
       <div class="sidebar-inner">
         <?php print render($page['sidebar_first']); ?>
       </div>
-    </aside>]<!-- /.sidebar-first -->
+    </section>]<!-- /.sidebar-first -->
   <?php endif; ?>
 
   <?php if ($page['sidebar_second']): ?>
-    <aside class="sidebar sidebar-second">
+    <section class="sidebar sidebar-second">
       <div class="sidebar-inner">
         <?php print render($page['sidebar_second']); ?>
       </div>
-    </aside> <!-- /.sidebar-second -->
+    </section> <!-- /.sidebar-second -->
   <?php endif; ?>
 
 </div><!-- /.main-content-wrapper -->
