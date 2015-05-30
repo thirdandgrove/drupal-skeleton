@@ -1,0 +1,87 @@
+//
+// Button styles.
+//
+
+[role="button"] {
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 12px 24px;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  border-radius: 3px;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: $gray-dark;
+  text-decoration: none;
+}
+
+.btn:active,
+.btn.active {
+  outline: 0;
+  background-image: none;
+}
+
+.btn.disabled,
+.btn[disabled],
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: $gray-dark;
+  background-color: $gray-light;
+  border-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-primary {
+  color: $white;
+  background-color: $blue;
+  border-color: $blue;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: $white;
+  background-color: $link-hover-color;
+  border-color: $link-hover-color;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+  background-image: none;
+}

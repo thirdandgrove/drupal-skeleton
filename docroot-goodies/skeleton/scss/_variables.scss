@@ -1,0 +1,66 @@
+//
+// Variable declarations.
+//
+
+// Color declarations.
+$black: #000;
+$white: #fff;
+$blue: #0daaff;
+
+$gray-darker: lighten($black, 13.5%); // #222
+$gray-dark: lighten($black, 20%);   // #333
+$gray: lighten($black, 33.5%); // #555
+$gray-light: lighten($black, 46.7%); // #777
+$gray-lighter: lighten($black, 93.5%); // #eee
+
+// Background color for `<body>`.
+$body-bg: $white;
+
+// Global text color on `<body>`.
+$text-color: $gray-dark;
+
+// Global textual link color.
+$link-color: $blue;
+
+// Link hover color set via `darken()` function.
+$link-hover-color: darken($link-color, 15%);
+
+// Font family stack declarations.
+$sans-serif-font-family: Helvetica, Arial, sans-serif;
+$serif-font-family: Georgia, Times, serif;
+
+// Global font-family on `<body>`.
+$font-family-base: $sans-serif-font-family;
+
+$font-family-headings: $serif-font-family;
+
+// Font size declarations and computations.
+$base-font-size: 14px;
+$sm-font-size: $base-font-size * .75;
+$base-font-weight: 400;
+$base-line-height: 1.428571429;
+$line-height-computed: ceil($base-font-size * $base-line-height);
+
+$h1-font-size: floor(2 * $base-font-size);
+$h2-font-size: floor(1.7 * $base-font-size);
+$h3-font-size: ceil(1.25 * $base-font-size);
+$h4-font-size: ceil(1 * $base-font-size);
+$h5-font-size: $base-font-size;
+$h6-font-size: ceil(.85 * $base-font-size);
+$headings-line-height: 1.2;
+$headings-font-weight: 700;
+
+// Z-index weight declarations.
+$z-index1: 100;
+$z-index2: 200;
+$z-index3: 300;
+$z-index4: 400;
+$z-index5: 500;
+$z-index6: 600;
+$z-index7: 700;
+$z-index8: 800;
+$z-index9: 900;
+$z-index10: 1000;
+
+// Icons variable
+$icons: sprite-map("icons/*.png");

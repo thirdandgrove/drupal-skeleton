@@ -1,0 +1,58 @@
+//
+// Typography declarations and styles.
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-headings;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+}
+
+h1, .h1 { font-size: $h1-font-size; }
+h2, .h2 { font-size: $h2-font-size; }
+h3, .h3 { font-size: $h3-font-size; }
+h4, .h4 { font-size: $h4-font-size; }
+h5, .h4 { font-size: $h5-font-size; }
+h6, .h6 { font-size: $h6-font-size; }
+
+p {
+  margin: 0 0 ($line-height-computed / 2);
+}
+
+p.lead {
+  font-size: 18px;
+}
+
+// Web font file declarations.
+
+/*
+ * Example of how to use font-face Compass mixin
+ *
+@include font-face(
+  "Proxima Nova",
+  font-files(
+    "proximanova-light-webfont.woff",
+    "proximanova-light-webfont.woff2",
+    "proximanova-light-webfont.ttf",
+    "proximanova-light-webfont.svg"
+  ),
+  "proximanova-light-webfont.eot",
+  300,
+  normal
+);
+*/
