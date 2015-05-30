@@ -50,7 +50,7 @@
     <div class="main-navigation-inner">
       <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('main-menu')), 'heading' => t('Main menu'))); ?>
       <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu')), 'heading' => t('Secondary menu'))); ?>
-    </div> <!-- /.main-navigation-inner -->
+    </div>
   </nav> <!-- /.main-navigation -->
 <?php endif; ?>
 
