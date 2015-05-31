@@ -1,0 +1,11 @@
+// Sprite image styles.
+// To add an icon image with width and height:
+// 1. Add your image as a png file in /img/icons with a simple name.
+// 2. Add @include icons-sprite(simple-name); declaration to a class.
+// 3. Ensure that you display the icon as `block` or `inline-block`.
+
+// Example of a sprited class icon.
+.icon-skull {
+  display: block;
+  @include icons-sprite(watch);
+}

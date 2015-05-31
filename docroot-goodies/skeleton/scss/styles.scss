@@ -5,6 +5,16 @@
 // Vendor components.
 @import "compass/css3/";
 @import "compass/utilities/sprites";
+@import "compass/utilities/sprites";
+$icons-sprite-dimensions: true;
+@import "icons/*.png";
+@include all-icons-sprites;
+@import "normalize";
 
 // Main styles.
+@import "variables";
+@import "mixins";
 @import "base";
+@import "typography";
+@import "buttons";
+@import "grid";

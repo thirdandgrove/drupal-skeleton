@@ -6,3 +6,7 @@ core = 7.x
 ; CSS
 ; --------------
 stylesheets[all][] = css/styles.css
+
+; SCRIPTS
+; --------------
+scripts[] = js/main.js
