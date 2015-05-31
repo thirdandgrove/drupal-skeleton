@@ -1,12 +1,12 @@
 # Drupal Skeleton: The barebones boilerplate
 
+<img align="right" height="260" src="drupal-skeleton-logo-no-wordmark.png">
+
 The Third and Grove Drupal skeleton is the starter repository we use to start all new Drupal projects. It contains some repo struts we find useful, a collection of import and release helpers we have written over the years, and the basic drush/release framework we use.
 
 For more information see our [introductory blog post](http://www.thirdandgrove.com/drupal-7-starter-skeleton).
 
-<img align="right" height="260" src="drupal-skeleton-logo-no-wordmark.png">
-
-## Installation
+### Installation
 
 1. Clone the repo
 
@@ -30,17 +30,17 @@ For more information see our [introductory blog post](http://www.thirdandgrove.c
 1. From `docroot` run the local setup script:
 > `scripts/setup-local.sh`
 
-## Release Helpers
+### Release Helpers
 
 Take a look at `releases/release-1-0.sh`. This is a starting template for a the first site release script. After initial release (or when the marketing team starts to use the CMS before launch), you can switch to a new release script format that matches the initial template except for the `drush site-install` line.
 
 See `releases/utils` for a variety of helper functions for importing data during releases and `releases/utils/examples` for specific release examples from previous projects.
 
-## Apache Solr
+### Apache Solr
 This Drupal starter contains Apache solr 3.5, but it has not been configured for any Drupal modules yet. To see it in action visit: `http://192.168.50.10:8080/solr` after running `vagrant up`. Schema file is located at `/usr/share/solr/example/solr/conf`. You can replace the schema.xml with whatever schema file your drupal implementation suggests.
 
 
-## Issues? Features?
+### Issues? Features?
 We welcome fixes and new features. Just fork the repo and submit a pull request!
 
 _Made in Cambridge, built with beer._
