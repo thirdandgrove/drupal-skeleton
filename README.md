@@ -4,7 +4,7 @@ The Third and Grove Drupal skeleton is the starter repository we use to start al
 
 For more information see our [introductory blog post](http://www.thirdandgrove.com/drupal-7-starter-skeleton).
 
-<img align="right" height="260" src="drupal-skeleton-logo-no-wordmark.svg">
+<img align="right" height="260" src="drupal-skeleton-logo-no-wordmark.png">
 
 ## Installation
 
