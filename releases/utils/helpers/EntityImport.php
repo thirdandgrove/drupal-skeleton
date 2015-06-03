@@ -211,7 +211,7 @@ class EntityImport extends Spyc {
   protected function createEntity($name, $bundle) {
     // Bundle is required, we add field_name in for field collections. Entities
     // that don't need this field will ignore it.
-    // If this is a commerce_product, add type attribute which is required. 
+    // If this is a commerce_product, add type attribute which is required.
     // @see line 102 of commerce_product.controller.inc.
     $entity = entity_create($name, array('bundle' => $bundle, 'type' => $bundle, 'field_name' => $bundle));
     return $entity;
