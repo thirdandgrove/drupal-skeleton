@@ -48,6 +48,12 @@ class NodeImport extends EntityImport {
         $node->uid = $account->uid;
         $node->name = $account->name;
       }
+
+      if (isset($entityMap['created']) && $time = strtotime($entityMap['created'])) {
+        $node->created = $time;
+        $node->updated = $time;
+      }
+
       node_save($node);
 
       if ($entityMap['entity'] == 'node' && isset($entityMap['path'])) {

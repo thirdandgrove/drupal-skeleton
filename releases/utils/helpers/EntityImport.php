@@ -37,6 +37,17 @@ class EntityImport extends Spyc {
     foreach ($this->entities['entities'] as $entityMap) {
       $entity = $this->translateEntity($entityMap);
       $entity->title = $entityMap['title'];
+
+      if (isset($entityMap['user']) && $account = user_load_by_name($entityMap['user'])) {
+        $entity->uid = $account->uid;
+        $entity->name = $account->name;
+      }
+
+      if (isset($entityMap['created']) && $time = strtotime($entityMap['created'])) {
+        $entity->created = $time;
+        $entity->updated = $time;
+      }
+
       entity_save($entityMap['entity'], $entity);
     }
   }
