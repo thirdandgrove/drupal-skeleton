@@ -13,6 +13,7 @@ projects[] = ember
 projects[] = ctools
 projects[] = views
 projects[] = admin_views
+projects[] = views_bulk_operations
 projects[] = features
 projects[] = token
 projects[] = panels
@@ -31,7 +32,6 @@ projects[] = reroute_email
 projects[] = devel
 projects[] = diff
 projects[] = module_filter
-projects[] = reroute_email
 projects[] = security_review
 projects[] = checklistapi
 
