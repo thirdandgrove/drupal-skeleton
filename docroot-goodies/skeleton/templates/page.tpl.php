@@ -107,7 +107,7 @@
       <div class="sidebar-inner">
         <?php print render($page['sidebar_first']); ?>
       </div>
-    </section>]<!-- /.sidebar-first -->
+    </section><!-- /.sidebar-first -->
   <?php endif; ?>
 
   <?php if ($page['sidebar_second']): ?>
