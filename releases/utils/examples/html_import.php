@@ -37,20 +37,17 @@ class ExampleHTMLImport extends TAGHTMLNodeImport {
   protected function parseHTML() {
     // This query will grab all elements with class containing 'node'.
     $results = $this->xpath->query("//*[contains(@class, 'node')]");
-    foreach ($results as $div) {
-      $body = tag_get_inner_html($div);
-      // Fix image path.
-      $body = str_replace('/img/', '/sites/default/files/example-pages/', $body);
-      break;
-    }
+    // In this example we're only using the first matching element.
+    $body_element = reset($results);
+    $body = tag_get_inner_html($body_element);
+    // Fix image path.
+    $body = str_replace('/img/', '/sites/default/files/example-pages/', $body);
 
     // Get the page title from the <title> tag.
-    $results = $this->xpath->query("/html/head/title");
-    foreach ($results as $link) {
-      // Titles pulled from the <title> tag are formatted like:
-      // "My Page | ExampleSite" so we strip off the extra.
-      $title = reset(explode('|', $link->nodeValue));
-    }
+    $title_element = reset($this->xpath->query("/html/head/title"));
+    // Titles pulled from the <title> tag are formatted like:
+    // "My Page | ExampleSite" so we strip off the extra.
+    $title = reset(explode('|', $title_element->nodeValue));
 
     // Finally, populate the node.
     $this->node->title = $title;
