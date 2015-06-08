@@ -13,7 +13,7 @@
 
 require_once('../releases/utils/dom.php');
 
-class ExampleHTMLImport extends TagHTMLNodeImport {
+class ExampleHTMLImport extends TAGHTMLNodeImport {
   // Set this to the base directory where you're importing from. This part of
   // the path will be stripped from the filename.
   public static $source_base_path = '../releases/release-1-0/example/pages';

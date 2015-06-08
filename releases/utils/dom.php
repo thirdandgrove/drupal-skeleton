@@ -25,7 +25,7 @@ function tag_get_inner_html(DOMNode $node) {
  *
  * @see examples/html_import.php for a working example.
  */
-abstract class TagHTMLNodeImport {
+abstract class TAGHTMLNodeImport {
   // Set this to a node type.
   public $node_type = 'page';
   // Set this to a valid text filter.
