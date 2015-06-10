@@ -28,9 +28,13 @@ class folders {
 }
 
 class updates {
-    exec { "aptitude-update":
-        command => "/usr/bin/aptitude update -y -q",
-        timeout => 0
+    exec {
+        "add-php-repository":
+            command => '/usr/bin/add-apt-repository -y ppa:ondrej/php5-5.6',
+            timeout => 0;
+        "aptitude-update":
+            command => "/usr/bin/aptitude update -y -q",
+            timeout => 0;
     }
 }
 
