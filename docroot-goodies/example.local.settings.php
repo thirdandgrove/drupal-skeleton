@@ -24,7 +24,7 @@ $databases['default']['default'] = array(
 );
 
 $conf['memcache_servers'] = array(
-  '192.168.50.10' => 'default',
+  '192.168.50.10:11211' => 'default',
 );
 
 // For local development we need to make the local solr server the default.
