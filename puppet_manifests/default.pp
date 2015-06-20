@@ -194,6 +194,8 @@ class services {
             command => '/usr/bin/sudo service apache2 restart';
         "memcached-restart":
             command => '/usr/bin/sudo /etc/init.d/memcached restart';
+        "redis-restart":
+            command => '/usr/bin/sudo /etc/init.d/redis-server restart';
         "mysql-restart":
             command => '/usr/bin/sudo service mysql restart';
         "tomcat-restart":
