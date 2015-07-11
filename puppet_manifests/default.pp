@@ -45,6 +45,7 @@ class packages {
             "curl",
             "unzip",
             "apache2",
+            "imagemagick",
             "sendmail",
             "memcached",
             "redis-server",
