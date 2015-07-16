@@ -41,3 +41,8 @@ projects[] = expire
 
 ; Acquia platform stuff.
 projects[] = acquia_connector
+
+; SEO.
+projects[] = site_map
+projects[] = metatag
+projects[] = seo_checklist
