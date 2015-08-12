@@ -1,7 +1,7 @@
 <?php
 
-// Allow people to register.
-variable_set('user_register', 1);
+// Allow people to register without admin approval.
+variable_set('user_register', USER_REGISTER_VISITORS);
 variable_set('user_email_verification', TRUE);
 
 // Create some accounts.
