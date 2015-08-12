@@ -1,7 +1,7 @@
 <?php
 
 // Allow people to register.
-variable_set('user_register', TRUE);
+variable_set('user_register', 1);
 variable_set('user_email_verification', TRUE);
 
 // Create some accounts.
