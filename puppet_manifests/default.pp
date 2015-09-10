@@ -192,7 +192,7 @@ class solr {
 class services {
     exec {
         "redis-configure":
-            command => "/usr/bin/sudo sed -i 's/bind 127.0.0.1/bind 127.0.0.1 192.168.50.10/g' /etc/redis/redis.conf";
+            command => "/usr/bin/sudo sed -i 's/bind 127.0.0.1/bind 0.0.0.0/g' /etc/redis/redis.conf";
         "apache-restart":
             command => '/usr/bin/sudo service apache2 restart';
         "memcached-restart":
