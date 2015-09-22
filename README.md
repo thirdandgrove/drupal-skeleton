@@ -20,12 +20,12 @@ For more information see our [introductory blog post](http://www.thirdandgrove.c
 
 1. Move `docroot-goodies\global_custom_module` to `docroot/sites/all/modules/custom` and name the module `[projectcode]_global`. For example, `nglcc_global`. Update `releases/release-1-0/bootstrap.php` with the module name you picked.
 
-1. Move `example.local.settings.php` to `docroot/sites/default`. Alter the this file for any needed local configuration changes than make a copy of the file in the same folder called `local.settings.php`. This file will be ignored by git.
-
 1. Copy `docroot-goodies/settings.php` to `docroot/sites/default/settings.php` and change `$drupal_hash_salt`.
 
 1. Boot up the Vagrant machine
 > `vagrant up`
+
+1. Update `docroot/sites/default/local.settings.php` for any needed local configuration changes. This file will be ignored by git.
 
 1. From `docroot` run the local setup script:
 > `scripts/setup-local.sh`
@@ -38,6 +38,9 @@ See `releases/utils` for a variety of helper functions for importing data during
 
 ### Apache Solr
 This Drupal starter contains Apache solr 3.5, but it has not been configured for any Drupal modules yet. To see it in action visit: `http://192.168.50.10:8080/solr` after running `vagrant up`. Schema file is located at `/usr/share/solr/example/solr/conf`. You can replace the schema.xml with whatever schema file your drupal implementation suggests.
+
+### Acquia-specific features
+`update-local.sh` in the `scripts` directory can be configured to copy the database and files from an Acquia host to your local vagrant instance.  Update the configuration variables at the top of the script with your Acquia account information.
 
 
 ### Issues? Features?
