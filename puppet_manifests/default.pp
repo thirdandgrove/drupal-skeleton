@@ -161,9 +161,10 @@ class php {
 class drupal {
     exec {
         "secret-settings":
-            command => '/bin/cp /vagrant/docroot/sites/default/example.secret.settings.php /vagrant/docroot/sites/default/secret.settings.php',
-            onlyif => '/bin/ls /vagrant/docroot/sites/default/example.secret.settings.php',
-            unless => '/bin/ls /vagrant/docroot/sites/default/secret.settings.php';
+            command => '/bin/cp /vagrant/docroot-goodies/example.local.settings.php /vagrant/docroot/sites/default/local.settings.php',
+            onlyif => '/bin/ls /vagrant/docroot-goodies/example.local.settings.php',
+            onlyif => '/bin/ls /vagrant/docroot/sites/default',
+            unless => '/bin/ls /vagrant/docroot/sites/default/local.settings.php';
     }
 }
 
