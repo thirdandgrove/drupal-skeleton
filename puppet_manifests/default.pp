@@ -135,13 +135,13 @@ class php {
             command => '/bin/echo "extension=uploadprogress.so" >> /etc/php5/apache2/php.ini',
             require => Exec['php-pecl-upload'];
 
-        "php-discover-drush":
-            command => '/usr/bin/pear channel-discover pear.drush.org',
+        "php-download-drush":
+            command => '/usr/bin/git clone https://github.com/drush-ops/drush.git /opt/drush',
             unless => '/bin/ls /usr/share/php/drush';
-        "php-install-drush":
-            command => '/usr/bin/pear install -Z drush/drush',
+        "php-link-drush":
+            command => '/bin/ln -s /opt/drush/drush /usr/sbin/drush',
             unless => '/bin/ls /usr/share/php/drush',
-            require => Exec['php-discover-drush'];
+            require => Exec['php-download-drush'];
 
         "console-table-download":
             command => '/usr/bin/wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz',
@@ -163,7 +163,6 @@ class drupal {
         "secret-settings":
             command => '/bin/cp /vagrant/docroot-goodies/example.local.settings.php /vagrant/docroot/sites/default/local.settings.php',
             onlyif => '/bin/ls /vagrant/docroot-goodies/example.local.settings.php',
-            onlyif => '/bin/ls /vagrant/docroot/sites/default',
             unless => '/bin/ls /vagrant/docroot/sites/default/local.settings.php';
     }
 }
