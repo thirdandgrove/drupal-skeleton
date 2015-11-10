@@ -150,7 +150,7 @@ class php {
             command => '/bin/tar -zxvf Console_Table-1.1.3.tgz',
             require => Exec['console-table-download'];
         "console-table-install":
-            command => '/bin/cp -r Console_Table-1.1.3 /usr/share/php/drush/lib/',
+            command => '/bin/cp -r Console_Table-1.1.3 /opt/drush/lib/',
             require => Exec['console-table-untar'];
 
         "memcached-bind-address":
