@@ -144,13 +144,13 @@ class php {
             require => Exec['php-download-drush'];
 
         "console-table-download":
-            command => '/usr/bin/wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz',
-            unless => '/bin/ls /usr/share/php/drush/lib/Console_Table-1.1.3';
+            command => '/usr/bin/wget https://github.com/pear/Console_Table/archive/Console_Table-1.1.6.tar.gz',
+            unless => '/bin/ls /usr/share/php/drush/lib/Console_Table-Console_Table-1.1.6';
         "console-table-untar":
-            command => '/bin/tar -zxvf Console_Table-1.1.3.tgz',
+            command => '/bin/tar -zxvf Console_Table-1.1.6.tar.gz',
             require => Exec['console-table-download'];
         "console-table-install":
-            command => '/bin/cp -r Console_Table-1.1.3 /opt/drush/lib/',
+            command => '/bin/cp -r Console_Table-Console_Table-1.1.6 /opt/drush/lib/',
             require => Exec['console-table-untar'];
 
         "memcached-bind-address":
