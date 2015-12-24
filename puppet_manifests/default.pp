@@ -6,7 +6,9 @@ stage {
     'packages':    before => Stage['apache'];
     'apache':      before => Stage['mysql'];
     'mysql':       before => Stage['php'];
-    'php':         before => Stage['drupal'];
+    'php':         before => Stage['composer'];
+    'composer':    before => Stage['drush'];
+    'drush':       before => Stage['drupal'];
     'drupal':      before => Stage['solr'];
     'solr':        before => Stage['services'];
     'services':    before => Stage['main'];
@@ -135,26 +137,36 @@ class php {
             command => '/bin/echo "extension=uploadprogress.so" >> /etc/php5/apache2/php.ini',
             require => Exec['php-pecl-upload'];
 
-        "php-download-drush":
-            command => '/usr/bin/git clone https://github.com/drush-ops/drush.git /opt/drush',
-            unless => '/bin/ls /usr/share/php/drush';
-        "php-link-drush":
-            command => '/bin/ln -s /opt/drush/drush /usr/sbin/drush',
-            unless => '/bin/ls /usr/share/php/drush',
-            require => Exec['php-download-drush'];
-
-        "console-table-download":
-            command => '/usr/bin/wget https://github.com/pear/Console_Table/archive/Console_Table-1.1.6.tar.gz',
-            unless => '/bin/ls /usr/share/php/drush/lib/Console_Table-Console_Table-1.1.6';
-        "console-table-untar":
-            command => '/bin/tar -zxvf Console_Table-1.1.6.tar.gz',
-            require => Exec['console-table-download'];
-        "console-table-install":
-            command => '/bin/cp -r Console_Table-Console_Table-1.1.6 /opt/drush/lib/',
-            require => Exec['console-table-untar'];
-
         "memcached-bind-address":
             command => '/usr/bin/sudo cp /vagrant/vagrant/memcached.conf /etc/memcached.conf';
+    }
+}
+
+class composer {
+    exec {
+        "composer-download":
+            command => '/usr/bin/curl -sS https://getcomposer.org/installer | /usr/bin/sudo /usr/bin/php -- --install-dir=/usr/local/bin --filename=composer',
+            unless => '/bin/ls /usr/share/php/composer';
+    }
+
+    # Scripts in /etc/profile.d/ will be executed on user login when /etc/profile is source(d) 
+    file { 
+        "/etc/profile.d/composer.sh":
+            content => 'export PATH="~/.composer/vendor/bin:$PATH"'
+    }
+}
+
+class drush {
+    exec {
+        
+        "drush-install":
+            environment => ["COMPOSER_HOME=/home/vagrant/.composer"],
+             command => '/usr/local/bin/composer global require drush/drush:dev-master', 
+            unless => '/bin/ls /usr/share/php/drush';
+       
+        "console-table-install":
+            environment => ["COMPOSER_HOME=/home/vagrant/.composer"],
+            command => '/usr/local/bin/composer global require pear/console_table:1.2.1';    
     }
 }
 
@@ -214,6 +226,8 @@ class {
     apache:      stage => "apache";
     mysql:       stage => "mysql";
     php:         stage => "php";
+    composer:    stage => "composer";
+    drush:       stage => "drush";
     drupal:      stage => "drupal";
     solr:        stage => "solr";
     services:    stage => "services";
