@@ -64,3 +64,8 @@ $z-index10: 1000;
 
 // Icons variable
 $icons: sprite-map("icons/*.png");
+
+// Grid System
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
