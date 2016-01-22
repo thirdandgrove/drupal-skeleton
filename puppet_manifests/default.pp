@@ -166,7 +166,7 @@ class drush {
        
         "console-table-install":
             environment => ["COMPOSER_HOME=/home/vagrant/.composer"],
-            command => '/usr/local/bin/composer global require pear/console_table:1.2.1';    
+            command => '/usr/local/bin/composer global require pear/console_table';    
     }
 }
 
