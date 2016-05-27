@@ -8,12 +8,15 @@ menus:
         children:
           - link_path: <front>
             link_title: About Our Program
+            weight: 0
             expanded: 1
           - link_path: <front>
             link_title: Become a Member
+            weight: 1
             expanded: 1
           - link_path: <front>
             link_title: Manage My Account
+            weight: 2
             expanded: 1
           - link_path: <front>
             link_title: Blog
