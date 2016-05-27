@@ -35,7 +35,7 @@ function tag_save_menu_items($menu_name, $items, $plid = NULL)  {
   foreach ($items as $item) {
     $item['menu_name'] = $menu_name;
     $item['link_path'] = drupal_get_normal_path($item['link_path']);
-    $item['weight'] = $weight;
+    $item['weight'] = isset($item['weight']) ? $item['weight'] : $weight;
     $item['plid'] = $plid;
     $item['expanded'] = isset($item['expanded']) ? $item['expanded'] : 0;
     $mlid = menu_link_save($item);
