@@ -38,7 +38,7 @@ echo 'Importing database into your local...'
 
 mysqldump -u $VAGRANT_USER -h $VAGRANT_IP --password=$VAGRANT_PASS --add-drop-table --no-data $VAGRANT_DB | grep ^DROP | mysql -u $VAGRANT_USER -h $VAGRANT_IP --password=$VAGRANT_PASS -D $VAGRANT_DB
 gunzip ~/$ACCOUNT_NAME-$ENV_SOURCE-db.sql.gz
-echo "flush_all" | nc $VAGRANT_IP $MEMCACHE_PORT
+echo -e "flush_all\nquit" | nc $VAGRANT_IP $MEMCACHE_PORT
 mysql -u $VAGRANT_USER -h $VAGRANT_IP --password=$VAGRANT_PASS -D $VAGRANT_DB < ~/$ACCOUNT_NAME-$ENV_SOURCE-db.sql
 
 echo 'Downloading files....'
