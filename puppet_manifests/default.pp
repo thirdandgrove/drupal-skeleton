@@ -126,15 +126,15 @@ class php {
         "enable-php-mcrypt":
             command => '/usr/bin/sudo phpenmod mcrypt';
         "php-apache2-apc":
-            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php5/apache2/php.ini';
+            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php/5.6/apache2/php.ini';
         "php-cli-apc":
-            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php5/cli/php.ini';
+            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php/5.6/cli/php.ini';
 
         "php-pecl-upload":
             command => '/usr/bin/sudo pecl install -Z uploadprogress',
             unless => '/bin/ls /usr/share/doc/php5/PEAR/uploadprogress';
         "php-ini-progress":
-            command => '/bin/echo "extension=uploadprogress.so" >> /etc/php5/apache2/php.ini',
+            command => '/bin/echo "extension=uploadprogress.so" >> /etc/php/5.6/apache2/php.ini',
             require => Exec['php-pecl-upload'];
 
         "memcached-bind-address":
