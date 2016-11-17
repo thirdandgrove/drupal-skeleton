@@ -52,19 +52,22 @@ class packages {
             "memcached",
             "redis-server",
             "default-jre",
-            "mysql-server",
+            "mysql-server-5.6",
             "build-essential",
             "libcurl3-openssl-dev",
             "php5.6",
             "php5.6-gd",
             "php5.6-cli",
             "php5.6-dev",
-            "php5.6-apcu",
             "php5.6-curl",
             "php5.6-mysql",
             "php5.6-mcrypt",
             "php5.6-memcache",
             "php5.6-redis",
+            "php5.6-dom",
+            "php5.6-intl",
+            "php5.6-mbstring",
+            "php5.6-zip",
             "php-pear",
             "tomcat6",
             ]:
@@ -123,6 +126,8 @@ class mysql {
 
 class php {
     exec {
+        "php-cli-5.6":
+            command => '/usr/bin/update-alternatives --set php /usr/bin/php5.6';
         "enable-php-mcrypt":
             command => '/usr/bin/sudo phpenmod mcrypt';
         "php-apache2-apc":
