@@ -124,7 +124,7 @@ class mysql {
 class php {
     exec {
         "enable-php-mcrypt":
-            command => '/usr/bin/sudo php5enmod mcrypt';
+            command => '/usr/bin/sudo phpenmod mcrypt';
         "php-apache2-apc":
             command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php5/apache2/php.ini';
         "php-cli-apc":
