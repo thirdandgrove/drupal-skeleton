@@ -32,7 +32,7 @@ class folders {
 class updates {
     exec {
         "add-php-repository":
-            command => '/usr/bin/add-apt-repository -y ppa:ondrej/php5-5.6',
+            command => '/usr/bin/add-apt-repository -y ppa:ondrej/php',
             timeout => 0;
         "aptitude-update":
             command => "/usr/bin/aptitude update -y -q",
@@ -52,19 +52,22 @@ class packages {
             "memcached",
             "redis-server",
             "default-jre",
-            "mysql-server",
+            "mysql-server-5.6",
             "build-essential",
             "libcurl3-openssl-dev",
-            "php5",
-            "php5-gd",
-            "php5-cli",
-            "php5-dev",
-            "php5-apcu",
-            "php5-curl",
-            "php5-mysql",
-            "php5-mcrypt",
-            "php5-memcache",
-            "php5-redis",
+            "php5.6",
+            "php5.6-gd",
+            "php5.6-cli",
+            "php5.6-dev",
+            "php5.6-curl",
+            "php5.6-mysql",
+            "php5.6-mcrypt",
+            "php5.6-memcache",
+            "php5.6-redis",
+            "php5.6-dom",
+            "php5.6-intl",
+            "php5.6-mbstring",
+            "php5.6-zip",
             "php-pear",
             "tomcat6",
             ]:
@@ -123,18 +126,15 @@ class mysql {
 
 class php {
     exec {
+        "php-cli-5.6":
+            command => '/usr/bin/update-alternatives --set php /usr/bin/php5.6';
         "enable-php-mcrypt":
-            command => '/usr/bin/sudo php5enmod mcrypt';
-        "php-apache2-apc":
-            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php5/apache2/php.ini';
-        "php-cli-apc":
-            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php5/cli/php.ini';
-
+            command => '/usr/bin/sudo phpenmod mcrypt';
         "php-pecl-upload":
             command => '/usr/bin/sudo pecl install -Z uploadprogress',
             unless => '/bin/ls /usr/share/doc/php5/PEAR/uploadprogress';
         "php-ini-progress":
-            command => '/bin/echo "extension=uploadprogress.so" >> /etc/php5/apache2/php.ini',
+            command => '/bin/echo "extension=uploadprogress.so" >> /etc/php/5.6/apache2/php.ini',
             require => Exec['php-pecl-upload'];
 
         "memcached-bind-address":
