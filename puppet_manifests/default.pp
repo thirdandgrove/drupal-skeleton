@@ -130,11 +130,6 @@ class php {
             command => '/usr/bin/update-alternatives --set php /usr/bin/php5.6';
         "enable-php-mcrypt":
             command => '/usr/bin/sudo phpenmod mcrypt';
-        "php-apache2-apc":
-            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php/5.6/apache2/php.ini';
-        "php-cli-apc":
-            command => '/bin/echo "apc.rfc1867 = 1" >> /etc/php/5.6/cli/php.ini';
-
         "php-pecl-upload":
             command => '/usr/bin/sudo pecl install -Z uploadprogress',
             unless => '/bin/ls /usr/share/doc/php5/PEAR/uploadprogress';
