@@ -32,7 +32,7 @@ class folders {
 class updates {
     exec {
         "add-php-repository":
-            command => '/usr/bin/add-apt-repository -y ppa:ondrej/php5-5.6',
+            command => '/usr/bin/add-apt-repository -y ppa:ondrej/php',
             timeout => 0;
         "aptitude-update":
             command => "/usr/bin/aptitude update -y -q",
@@ -55,16 +55,16 @@ class packages {
             "mysql-server",
             "build-essential",
             "libcurl3-openssl-dev",
-            "php5",
-            "php5-gd",
-            "php5-cli",
-            "php5-dev",
-            "php5-apcu",
-            "php5-curl",
-            "php5-mysql",
-            "php5-mcrypt",
-            "php5-memcache",
-            "php5-redis",
+            "php5.6",
+            "php5.6-gd",
+            "php5.6-cli",
+            "php5.6-dev",
+            "php5.6-apcu",
+            "php5.6-curl",
+            "php5.6-mysql",
+            "php5.6-mcrypt",
+            "php5.6-memcache",
+            "php5.6-redis",
             "php-pear",
             "tomcat6",
             ]:
