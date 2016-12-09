@@ -6,8 +6,8 @@
 # Clear your local Memcached so old cache entries from the previous version of
 # the site don't blow up this release script. Clear this on both your local and
 # Vagrant, so we cover both use cases.
-echo "flush_all" | nc localhost 11211
-echo "flush_all" | nc localhost 11221
+echo -e "flush_all\nquit" | nc localhost 11211
+echo -e "flush_all\nquit" | nc localhost 11221
 
 ../releases/release-1-0.sh
 
