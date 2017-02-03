@@ -98,9 +98,15 @@ class apache {
         "copy-apache-ssl-conf":
             command => '/usr/bin/sudo cp /vagrant/vagrant/apache_ssl.conf /etc/apache2/sites-enabled/apache_ssl.conf';
 
+        "copy-apache-ports-conf":
+            command => '/usr/bin/sudo cp /vagrant/vagrant/ports.conf /etc/apache2/ports.conf';
+
         "apache-rewrite":
             command => '/usr/bin/sudo a2enmod rewrite';
 
+        "apache-proxy":
+            command => '/usr/bin/sudo a2enmod proxy';
+            
         "apache-ssl-mod":
             command => '/usr/bin/sudo a2enmod ssl';
 
