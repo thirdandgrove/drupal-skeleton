@@ -106,7 +106,13 @@ class apache {
 
         "apache-proxy":
             command => '/usr/bin/sudo a2enmod proxy';
-            
+
+        "apache-proxy-http":
+            command => '/usr/bin/sudo a2enmod proxy_http';
+
+        "apache-headers":
+            command => '/usr/bin/sudo a2enmod headers';
+
         "apache-ssl-mod":
             command => '/usr/bin/sudo a2enmod ssl';
 
