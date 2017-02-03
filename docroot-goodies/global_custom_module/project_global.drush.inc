@@ -22,6 +22,9 @@ function project_global_drush_command() {
     'gotest' => array(
       'description' => dt('Puts your site in Acquia testing mode.'),
     ),
+    'gocache' => array(
+      'description' => dt('Enables caching for debugging purposes.'),
+    ),
   );
 }
 
@@ -97,3 +100,17 @@ function drush_project_global_golocal() {
 
   drush_log('Site ready for development!', 'ok');
 }
+
+/**
+ * Enables caching for debugging purposes.
+ */
+function drush_project_global_gocache() {
+  variable_set('cache', "1");
+  variable_set('block_cache', "1");
+  variable_set('error_level', "0");
+  variable_set('preprocess_js', "1");
+  variable_set('preprocess_css', "1");
+  variable_set('page_compression', "1");
+  drush_log('Caching enabled!', 'ok');
+}
+
