@@ -9,7 +9,8 @@ stage {
     'php':         before => Stage['composer'];
     'composer':    before => Stage['drush'];
     'drush':       before => Stage['drupal'];
-    'drupal':      before => Stage['solr'];
+    'drupal':      before => Stage['varnish'];
+    'varnish':     before => Stage['solr'];
     'solr':        before => Stage['services'];
     'services':    before => Stage['main'];
 }
@@ -47,6 +48,7 @@ class packages {
             "curl",
             "unzip",
             "apache2",
+            "varnish",
             "imagemagick",
             "sendmail",
             "memcached",
@@ -179,6 +181,15 @@ class drupal {
     }
 }
 
+class varnish {
+    exec {
+        "varnish-port-config":
+            command => '/usr/bin/sudo cp /vagrant/vagrant/varnish /etc/default/varnish';
+        "varnish-vcl":
+            command => '/usr/bin/sudo cp /vagrant/vagrant/default.vcl /etc/varnish/default.vcl';
+    }
+}
+
 class solr {
     exec {
         "download":
@@ -207,6 +218,8 @@ class services {
             command => "/usr/bin/sudo sed -i 's/bind 127.0.0.1/bind 0.0.0.0/g' /etc/redis/redis.conf";
         "apache-restart":
             command => '/usr/bin/sudo service apache2 restart';
+        "varnish-restart":
+            command => '/usr/bin/sudo service varnish restart';
         "memcached-restart":
             command => '/usr/bin/sudo /etc/init.d/memcached restart';
         "redis-restart":
@@ -229,6 +242,7 @@ class {
     composer:    stage => "composer";
     drush:       stage => "drush";
     drupal:      stage => "drupal";
+    varnish:     stage => "varnish";
     solr:        stage => "solr";
     services:    stage => "services";
 }
